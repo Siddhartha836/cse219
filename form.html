@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Hover Effects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d4e51d;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"], input[type="file"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #1ad1de;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="file"]:hover, select:hover, input[type="text"]:hover, input[type="email"]:hover, textarea:hover {
+            border-color: #4CAF50;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" placeholder="First Name Last Name" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">Select City <span class="required">*</span></label>
+            <select id="city" name="city" required>
+                <option value="" hidden>Select a City</option>
+                <option value="Jalandhar">Jalandhar</option>
+                <option value="Phagwara">Phagwara</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kanpur">Kanpur</option>
+                <option value="Agra">Agra</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address <span class="required">*</span></label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Gender <span class="required">*</span></label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other" required>
+            <label for="other">Other</label>
+        </div>
+
+        <div class="form-group">
+            <label for="documents">Upload Required Documents <span class="required">*</span></label>
+            <input type="file" id="documents" name="documents" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+        <div class="form-group">
+            <button type="reset">Reset</button>
+        </div>
+        
+    </form>
+</div>
+
+</body>
+</html>

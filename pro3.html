@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href=".css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        "sidebar content"
+        "sidebar content";
+    grid-template-rows: 1fr;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: rgb(220, 222, 217);
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.b {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.c {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas: 
+            "sidebar"
+            "content";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .content {
+        grid-template-rows: auto auto;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <aside class="sidebar">a (Sidebar)</aside>
+        <div class="content">
+            <div class="b">b</div>
+            <div class="c">c</div>
+        </div>
+    </div>
+</body>
+</html>
